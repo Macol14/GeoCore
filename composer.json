@@ -1,0 +1,20 @@
+{
+    "name": "mcl/geocore",
+    "description": "Geospatial framework for the API2 ecosystem.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mario Luis Córdova López"
+        }
+    ],
+    "require": {
+        "php": "^8.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "MCL\\GeoCore\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
