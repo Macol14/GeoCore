@@ -49,33 +49,33 @@ map.on('load', () => {
 
 <?php foreach ($layers as $layer): ?>
 
-    map.addSource('<?= $layer ?>', {
+map.addSource('<?= $layer['name'] ?>', {
 
-        type: 'vector',
+    type: 'vector',
 
-        url: '<?= $martin ?>/<?= $layer ?>'
+    url: '<?= $martin ?>/<?= $layer['name'] ?>'
 
-    });
+});
 
-    map.addLayer({
+map.addLayer({
 
-        id: '<?= $layer ?>',
+    id:'<?= $layer['name'] ?>',
 
-        type: 'fill',
+    type:'fill',
 
-        source: '<?= $layer ?>',
+    source:'<?= $layer['name'] ?>',
 
-        'source-layer': '<?= $layer ?>',
+    'source-layer':'<?= $layer['name'] ?>',
 
-        paint: {
+    paint:{
 
-            'fill-color': '#0080ff',
+        'fill-color':'<?= $layer['fillColor'] ?>',
 
-            'fill-opacity': 0.25
+        'fill-opacity':<?= $layer['fillOpacity'] ?>
 
-        }
+    }
 
-    });
+});
 
 <?php endforeach; ?>
 

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace MCL\GeoCore\Map;
 
 use MCL\GeoCore\Renderer\MapLibreRenderer;
+use MCL\GeoCore\Layer\Layer;
 
 final class Map
 {
@@ -44,23 +45,25 @@ final class Map
         return $this;
     }
 
-    public function layer(string $layer): self
+    public function layer(Layer $layer): self
     {
         $this->layers[] = $layer;
 
         return $this;
     }
-
-    public function toArray(): array
+     public function toArray(): array
     {
-        return [
-            'martin' => $this->martin,
-            'style'  => $this->style,
-            'center' => $this->center,
-            'zoom'   => $this->zoom,
-            'layers' => $this->layers,
-        ];
-    }
+    return [
+        'martin' => $this->martin,
+        'style'  => $this->style,
+        'center' => $this->center,
+        'zoom'   => $this->zoom,
+        'layers' => array_map(
+            static fn (Layer $layer): array => $layer->toArray(),
+            $this->layers
+        ),
+    ];
+}
 
     public function render(): string
     {
