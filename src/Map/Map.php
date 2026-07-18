@@ -51,6 +51,16 @@ final class Map
 
         return $this;
     }
+
+    public function layers(Layer ...$layers): self
+    {
+        foreach ($layers as $layer) {
+            $this->layer($layer);
+        }
+
+        return $this;
+    }
+    
      public function toArray(): array
     {
     return [

@@ -7,3 +7,30 @@
 - [ ] Add Martin vector layer
 - [ ] Display popup
 - [ ] Add click events
+
+
+GeoCore
+
+Dominio
+
+✔ Map
+
+✔ Layer
+
+✔ Source
+
+Pendientes
+
+□ Popup
+
+□ Events
+
+□ Controls
+
+□ Legend
+
+□ Symbolization
+
+□ Queries
+
+□ Editing

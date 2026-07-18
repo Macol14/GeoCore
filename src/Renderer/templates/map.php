@@ -61,7 +61,7 @@ map.addLayer({
 
     id:'<?= $layer['name'] ?>',
 
-    type:'fill',
+    type: '<?= $layer['type'] ?>',
 
     source:'<?= $layer['name'] ?>',
 
@@ -71,7 +71,9 @@ map.addLayer({
 
         'fill-color':'<?= $layer['fillColor'] ?>',
 
-        'fill-opacity':<?= $layer['fillOpacity'] ?>
+        'fill-opacity':<?= $layer['fillOpacity'] ?>,
+        
+        'fill-outline-color': '<?= $layer['outlineColor'] ?>',
 
     }
 
